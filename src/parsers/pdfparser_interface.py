@@ -1,10 +1,16 @@
 from abc import ABC, abstractmethod
+from typing import List
+from langchain_core.documents import Document
 
 class PDFParser(ABC):
     @abstractmethod
-    def parse(self, file_path: str) -> list[dict]:
+    def parse(self) -> list[dict]:
         """
-        Extract structured data from PDF.
-        Returns: list of {"page": int, "type": str, "content": str}
+        Extract unstructured data from PDF.
         """
+        pass
+    
+    @abstractmethod
+    def split_documents(self, documents: List[Document]) -> List[Document]:
+        """Split documents into smaller chunks."""
         pass

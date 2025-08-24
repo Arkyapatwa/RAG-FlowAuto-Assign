@@ -4,11 +4,14 @@ from pydantic_settings import BaseSettings
 
 load_dotenv()
 
+WATCHED_DIRECTORY = os.getenv("WATCHED_DIRECTORY", "./data")
+
 class OpenAIEmbeddingsConfig(BaseSettings):
     api_key: str = os.getenv("OPENAI_API_KEY", "")
     model_name: str = os.getenv("OPENAI_MODEL_NAME", "gpt-3.5-turbo")
     temperature: float = float(os.getenv("OPENAI_TEMPERATURE", "0.7"))
     max_retries: int = int(os.getenv("OPENAI_MAX_RETRIES", "3"))
+    endpoint: str = os.getenv("OPENAI_ENDPOINT")
 
 class OpenAIChatConfig(BaseSettings):
     api_key: str = os.getenv("OPENAI_API_KEY", "")
