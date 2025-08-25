@@ -4,7 +4,7 @@ from langchain_core.documents import Document
 
 class PDFParser(ABC):
     @abstractmethod
-    def parse(self) -> list[dict]:
+    def parse(self, file_path: str) -> list[dict]:
         """
         Extract unstructured data from PDF.
         """
