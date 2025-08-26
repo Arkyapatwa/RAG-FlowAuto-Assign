@@ -11,6 +11,11 @@ class PDFParser(ABC):
         pass
     
     @abstractmethod
+    def parse_images(self, file_path: str) -> List[Document]:
+        """Extract and parse images from PDF."""
+        pass
+    
+    @abstractmethod
     def split_documents(self, documents: List[Document]) -> List[Document]:
         """Split documents into smaller chunks."""
         pass

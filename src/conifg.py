@@ -17,6 +17,7 @@ class OpenAIChatConfig(BaseSettings):
     model_name: str = os.getenv("OPENAI_CHAT_MODEL_NAME")
     temperature: float = float(os.getenv("OPENAI_CHAT_TEMPERATURE", "0.7"))
     max_retries: int = int(os.getenv("OPENAI_CHAT_MAX_RETRIES", "3"))
+    endpoint: str = os.getenv("OPENAI_ENDPOINT")
     
 class PineconeConfig(BaseSettings):
     api_key: str = os.getenv("PINECONE_API_KEY")

@@ -3,7 +3,7 @@ from fastapi import FastAPI
 def create_app() -> FastAPI:
     app = FastAPI()
     
-    from src.routes import search
+    from routes import search
     
     app.include_router(search.router, prefix="/search", tags=["Search"])
     
